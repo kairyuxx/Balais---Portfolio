@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="education.html">
+    <link rel="stylesheet" href="contact.html">
+    <link rel="stylesheet" href="skill.css">
+</head>
+<body>
+    <body>
+        <header class="header">
+            <a href="index.html" class="logo"><span>My Portfolio</span></a>
+            
+            
+    
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="education.html">Education</a>
+                <a href="skill" class="active">Skill</a>
+                <a href="contact.html">Contact</a>
+    
+            </nav>
+        </header>
+        <section class="home" id="home">
+            <div class="home-content">
+              <h2 class="skill-heading">SKILL | SAMPLE WORK</h2>
+              <div class="home-img">
+                <div class="image-container">
+                  <img src="images/webdev.jpg.png" alt="Web Development">
+                  <div class="img-title">Web Development</div>
+                </div>
+                <div class="image-container">
+                  <img src="images/circuit.jpg" alt="Circuit Design">
+                  <div class="img-title">Circuit Design</div>
+                </div>
+                <div class="image-container">
+                  <img src="images/programming.jpg" alt="Programming">
+                  <div class="img-title">Programming</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div id="lightbox" class="lightbox">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    
+        <script>
+            function goBack() {
+                window.location.href = "page1.html"; 
+            }
+            function goNext() {
+                window.location.href = "page3.html"; 
+            }
+        </script>
+    
+    </body>
+    <script>
+        function openLightbox(src) {
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          lightbox.style.display = 'block';
+          lightboxImg.src = src;
+        }
+      
+        function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+          img.classList.remove('clicked');
+          
+        }
+      
+        
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeLightbox();
+    
+            imgElement.classList.add('1.jpg');
+          }
+        });
+      </script>
+    
+    <script>
+        let clickedImg = null;
+    
+        function openLightbox(imgElement) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+    
+            
+            lightbox.style.display = 'block';
+            lightboxImg.src = imgElement.src;
+    
+            
+            if (clickedImg) {
+                clickedImg.classList.remove('clicked');
+            }
+            imgElement.classList.add('clicked');
+            clickedImg = imgElement;
+        }
+    
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            
+           
+            if (clickedImg) {
+                clickedImg.classList.remove('clicked');
+                clickedImg = null;
+            }
+        }
+    
+        
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    
+      
+    </html> 
+</body>
+</html>
